@@ -1,0 +1,28 @@
+# Build-Output
+/build/
+/CMakeFiles/
+/cmake-build-*/
+
+# CMake-Artefakte
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+compile_commands.json
+
+# Binär- und Objekt-Dateien
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+*.out
+
+# VSCode/VSCodium
+.vscode/
+
+# Sonstige temporäre Dateien
+*~
+*.swp
+.DS_Store
