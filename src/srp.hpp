@@ -7,6 +7,8 @@
 #include "srp_config.hpp"
 #include <array>
 
+//#define DEBUG_OUT
+
 namespace srp {
 
 class Srp {

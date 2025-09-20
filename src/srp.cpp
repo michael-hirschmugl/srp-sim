@@ -6,6 +6,7 @@
 #include "srp.hpp"
 //#include <stdexcept>
 #include <iostream>
+#include <bitset>
 
 namespace srp {
 
@@ -15,6 +16,21 @@ void Srp::run()
     while (pc_ >= 0)
     {
         cfg::UWord instr = static_cast<cfg::UWord>(memory_[pc_]);
+        std::string binaryOpcode;
+
+        #ifdef DEBUG_OUT
+        for (int i = 31; i >= 0; --i){
+            binaryOpcode += (instr & (1 << i)) ? '1' : '0';
+        }
+        std::cout << "Program Counter: " << pc_ << std::endl;
+        std::cout << "Current opcode: " << binaryOpcode << std::endl;
+
+        std::cout << "Register Contents:\n";
+        for (int i = 0; i <= 31; ++i){
+            std::cout << "R" << i << ": " << registers_[i] << "; ";
+        }
+        std::cout << std::endl;
+        #endif
 
         // Decode common fields
         cfg::UWord opCode = (instr >> 27) & 0x1Fu;
